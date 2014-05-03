@@ -14,7 +14,7 @@ use Symfony\Component\HttpKernel\KernelEvents;
 
 /**
  * It handles filters configured on FilterableControllerInterface controllers,
- * dispatching an event called pugx.filter_controller.{filter_name} for each filter found
+ * dispatching an event called PreExecuteEvents::PRE_EXECUTE.{filter_name} for each filter found
  *
  * @package PUGX\PreExecuteControllerBundle\Service
  */
