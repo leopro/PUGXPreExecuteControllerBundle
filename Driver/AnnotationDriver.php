@@ -28,17 +28,26 @@ class AnnotationDriver implements DriverInterface
 
         $reflectionObject = new \ReflectionObject($controller);
 
+        $this->addClassFilter($reflectionObject, $filterables);
+        $this->addMethodFilter($reflectionObject, $method, $filterables);
+
+        return $filterables;
+    }
+
+    protected function addClassFilter($reflectionObject, &$filterables)
+    {
         $annotationClass = $this->reader->getClassAnnotation($reflectionObject, $this->annotationClass);
         if (null !== $annotationClass) {
             $filterables[] = $annotationClass;
         }
+    }
 
+    protected function addMethodFilter($reflectionObject, $method, &$filterables)
+    {
         $reflectionMethod = $reflectionObject->getMethod($method);
         $annotationMethod = $this->reader->getMethodAnnotation($reflectionMethod, $this->annotationClass);
         if (null !== $annotationMethod) {
             $filterables[] = $annotationMethod;
         }
-
-        return $filterables;
     }
 } 

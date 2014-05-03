@@ -15,6 +15,7 @@ class AnnotationDriverIntegrationTest extends \PHPUnit_Framework_TestCase
         $this->driver = new AnnotationDriver($this->reader);
 
         $this->controller = new FilteredController();
+
         $this->reflectionObject = new \ReflectionObject($this->controller);
 
         $this->filterable = $this->getMockBuilder('PUGX\PreExecuteControllerBundle\Annotation\PreExecute')
