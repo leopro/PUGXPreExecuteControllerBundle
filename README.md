@@ -23,7 +23,7 @@ Add the following lines in your composer.json:
         }
     ],
     "require": {
-        "pugxpugx/pre-execute-controller-bundle": "dev-master"
+        "pugx/pre-execute-controller-bundle": "dev-master"
     }
 }
 ```
