@@ -6,6 +6,7 @@
 
     <services>
         <service id="pugx.filterable.subscriber" class="PUGX\PreExecuteControllerBundle\Subscriber\PreExecuteSubscriber">
+            <tag name="kernel.event_listener" event="kernel.controller"/>
             <argument type="service" id="pugx_pre_execute.driver"/>
             <argument type="service" id="event_dispatcher"/>
         </service>
